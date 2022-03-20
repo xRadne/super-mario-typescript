@@ -1,6 +1,6 @@
 {
   "spriteSheet": "overworld",
-  "musicSheet": "silent",
+  "musicSheet": "overworld",
 
   "patternSheet": "overworld-pattern",
 
@@ -24,7 +24,7 @@
 
   "triggers": [
     {
-      "type": "goto",
+      "type": "go-to-level",
       "name": "1-1",
       "pos": [64, 64]
     }

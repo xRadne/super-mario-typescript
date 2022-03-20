@@ -80,14 +80,16 @@ export function setupTriggers(levelSpec: LevelSpec, level: Level) {
   for (const triggerSpec of levelSpec.triggers) {
     const trigger = new Trigger()
 
+    const tileSize = level.tileCollider.resolvers?.[0].tileSize ?? 16
+
     trigger.conditions.push((entity, touches, gc, level) => {
       level.events.emit(Level.EVENT_TRIGGER, triggerSpec, entity, touches)
     })
 
     const entity = new Entity()
     entity.addTrait(trigger)
-    entity.pos.set(...triggerSpec.pos)
-    entity.size.set(64, 64)
+    entity.pos.set(tileSize * triggerSpec.pos[0], tileSize * triggerSpec.pos[1])
+    entity.size.set(tileSize * triggerSpec.size[0], tileSize * triggerSpec.size[1])
 
     level.entities.add(entity)
   }

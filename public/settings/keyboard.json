@@ -1,0 +1,6 @@
+{
+  "right": ["ArrowRight", "KeyD"],
+  "left": ["ArrowLeft", "KeyA"],
+  "jump": ["KeyX", "KeyP", "Space"],
+  "turbo": ["KeyZ", "KeyO"]
+}

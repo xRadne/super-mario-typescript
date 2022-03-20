@@ -39,7 +39,7 @@ async function main(canvas: HTMLCanvasElement) {
   const mario = entityFactory.mario?.() || raise('where mario tho')
   makePlayer(mario, 'MARIO')
 
-  const inputRouter = setupKeyboard(window)
+  const inputRouter = await setupKeyboard(window)
   inputRouter.addReceiver(mario)
 
   async function runLevel(name: string) {
@@ -56,7 +56,7 @@ async function main(canvas: HTMLCanvasElement) {
     level.events.listen(
       Level.EVENT_TRIGGER,
       (spec: LevelSpecTrigger, trigger: Entity, touches: Set<Entity>) => {
-        if (spec.type === 'goto') {
+        if (spec.type === 'go-to-level') {
           for (const entity of touches) {
             if (entity.getTrait(Player)) {
               runLevel(spec.name)
@@ -106,7 +106,7 @@ async function main(canvas: HTMLCanvasElement) {
   }
 
   timer.start()
-  runLevel('debug-progression')
+  runLevel('debug-coin')
 }
 
 const canvas = document.getElementById('screen')
