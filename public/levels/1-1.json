@@ -149,6 +149,14 @@
     {
       "name": "goomba",
       "pos": [220, 0]
+    },
+    {
+      "name": "mushroom",
+      "pos": [200, 0]
+    },
+    {
+      "name": "mushroom",
+      "pos": [180, 0]
     }
   ],
   "triggers": [

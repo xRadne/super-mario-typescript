@@ -24,6 +24,30 @@
     {
       "name": "jump",
       "rect": [355, 44, 16, 16]
+    },
+    {
+      "name": "grown-idle",
+      "rect": [258, 0, 16, 32]
+    },
+    {
+      "name": "grown-run-1",
+      "rect": [296, 0, 16, 32]
+    },
+    {
+      "name": "grown-run-2",
+      "rect": [314, 0, 16, 32]
+    },
+    {
+      "name": "grown-run-3",
+      "rect": [331, 0, 16, 32]
+    },
+    {
+      "name": "grown-brake",
+      "rect": [387, 0, 16, 32]
+    },
+    {
+      "name": "grown-jump",
+      "rect": [369, 0, 16, 32]
     }
   ],
 

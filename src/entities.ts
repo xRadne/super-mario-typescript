@@ -3,6 +3,7 @@ import { loadCannon } from './entities/Cannon'
 import { loadGoomba } from './entities/Goomba'
 import { loadKoopa } from './entities/Koopa'
 import { loadMario } from './entities/Mario'
+import { loadMushroom } from './entities/Mushroom'
 import { Entity } from './Entity'
 import { Dict } from './types'
 
@@ -25,6 +26,7 @@ export async function loadEntities(
     loadKoopa().then(addAs('koopa')),
     loadBullet().then(addAs('bullet')),
     loadCannon(audioContext).then(addAs('cannon')),
+    loadMushroom().then(addAs('mushroom')),
   ])
 
   return factories

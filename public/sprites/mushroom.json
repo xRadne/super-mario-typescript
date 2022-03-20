@@ -1,0 +1,13 @@
+{
+  "imageURL": "images/items.png",
+  "frames": [
+    {
+      "name": "default",
+      "rect": [184, 34, 16, 16]
+    },
+    {
+      "name": "1-Up",
+      "rect": [214, 34, 16, 16]
+    }
+  ]
+}

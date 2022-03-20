@@ -30,7 +30,7 @@ const handleY: TileColliderHandler = ({
       const grid = resolver.matrix
       grid.delete(match.indexX, match.indexY)
 
-      const goomba = gameContext.entityFactory.goomba!()
+      const goomba = gameContext.entityFactory.mushroom!()
       goomba.vel.set(50, -400)
       goomba.pos.set(entity.pos.x, match.y1)
       level.entities.add(goomba)

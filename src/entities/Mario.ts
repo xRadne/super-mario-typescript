@@ -21,6 +21,13 @@ export class Mario extends Entity {
   killable = this.addTrait(new Killable())
   solid = this.addTrait(new Solid())
   physics = this.addTrait(new Physics())
+  get grown() {
+    return this.size.y > 16
+  }
+  set grown(grown: boolean) {
+    this.size.y = grown ? 30 : 16
+    this.size.x = grown ? 16 : 14
+  }
 
   constructor(
     private sprites: SpriteSheet,
@@ -33,13 +40,21 @@ export class Mario extends Entity {
 
     this.go.dragFactor = SLOW_DRAG
     this.killable.removeAfter = 0
+    this.killable.shouldBeKilled = () => {
+      if (this.grown) {
+        this.grown = false
+        return false
+      }
+      return true
+    }
 
     this.setTurboState(false)
   }
 
   resolveAnimationFrame() {
+    const grown = this.grown ? 'grown-' : ''
     if (this.jump.falling) {
-      return 'jump'
+      return grown + 'jump'
     }
 
     if (this.go.distance > 0) {
@@ -47,12 +62,12 @@ export class Mario extends Entity {
         (this.vel.x > 0 && this.go.dir < 0) ||
         (this.vel.x < 0 && this.go.dir > 0)
       ) {
-        return 'brake'
+        return grown + 'brake'
       }
 
-      return this.runAnimation(this.go.distance)
+      return grown + this.runAnimation(this.go.distance)
     }
-    return 'idle'
+    return grown + 'idle'
   }
 
   draw(context: CanvasRenderingContext2D) {

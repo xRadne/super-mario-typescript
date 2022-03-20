@@ -2,8 +2,13 @@ import { Entity, Side } from '../Entity'
 import { Trait } from '../Trait'
 
 export class PendulumMove extends Trait {
-  speed = -30
+  speed: number
   enabled = true
+
+  constructor(speed: number = -30) {
+    super()
+    this.speed = speed
+  }
 
   update(ent: Entity) {
     if (this.enabled) {

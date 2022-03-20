@@ -8,10 +8,16 @@ export class Killable extends Trait {
   deadTime = 0
   removeAfter = 2
 
+  shouldBeKilled() {
+    return true
+  }
+
   kill() {
-    this.queue(() => {
-      this.dead = true
-    })
+    if (this.shouldBeKilled()) {
+      this.queue(() => {
+        this.dead = true
+      })
+    }
   }
 
   revive() {
