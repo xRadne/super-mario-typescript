@@ -1,4 +1,3 @@
-import { Animation } from '../animation'
 import { Entity } from '../Entity'
 import { loadSpriteSheet } from '../loaders/sprite'
 import { SpriteSheet } from '../SpriteSheet'
@@ -9,7 +8,6 @@ import { PendulumMove } from '../traits/PendulumMove'
 import { Physics } from '../traits/Physics'
 import { Player } from '../traits/Player'
 import { Solid } from '../traits/Solid'
-import { Stomper } from '../traits/Stomper'
 import { Mario } from './Mario'
 
 class MushroomBehaviour extends Trait {

@@ -2,6 +2,7 @@
   "fx": {
     "coin": { "url": "/audio/coin.ogg" },
     "jump": { "url": "/audio/jump.ogg" },
-    "stomp": { "url": "/audio/stomp.ogg" }
+    "stomp": { "url": "/audio/stomp.ogg" },
+    "die": { "url": "/audio/die.ogg" }
   }
 }

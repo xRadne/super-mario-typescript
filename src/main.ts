@@ -17,6 +17,7 @@ import { Scene } from './Scene'
 import { SceneRunner } from './SceneRunner'
 import { TimedScene } from './TimedScene'
 import { Timer } from './Timer'
+import { Killable } from './traits/Killable'
 import { Player } from './traits/Player'
 
 async function main(canvas: HTMLCanvasElement) {
@@ -60,6 +61,14 @@ async function main(canvas: HTMLCanvasElement) {
           for (const entity of touches) {
             if (entity.getTrait(Player)) {
               runLevel(spec.name)
+              return
+            }
+          }
+        }
+        else if (spec.type === 'die') {
+          for (const entity of touches) {
+            if (entity.getTrait(Player)) {
+              entity.useTrait(Killable, k => k.kill())
               return
             }
           }
